@@ -1,0 +1,40 @@
+{
+  "name": "RE07",
+  "version": "1.0.0",
+  "description": "A dashboard built with ReactJS and a Node backend using Express/Socket.io to keep track of donations in real time.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "postinstall": "webpack",
+    "webpack": "webpack",
+    "webpack-watch": "webpack --watch --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JeffRisberg/RE03"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "socket.io": "^1.3.7"
+  },
+  "devDependencies": {
+    "babel-core": "^6.5.1",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-plugin-transform-object-rest-spread": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "express": "^4.13.1",
+    "body-parser": "^1.4.3",
+    "nedb": "^1.8.0",
+    "glob": "^7.0.3",
+    "webpack": "^1.12.14"
+  },
+  "keywords": [
+    "React",
+    "Express",
+    "Node",
+    "Socket.io"
+  ]
+}
