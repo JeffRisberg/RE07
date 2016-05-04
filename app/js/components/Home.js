@@ -13,7 +13,7 @@ class Home extends React.Component {
                         Uses React for presentation
                     </div>
                     <div className="col-md-4">
-                        Uses socket.io for data management
+                        Uses socket.io for real-time updates
                     </div>
                     <div className="col-md-4">
                         No database right now
