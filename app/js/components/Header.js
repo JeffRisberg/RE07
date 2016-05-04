@@ -28,15 +28,35 @@ class Header extends React.Component {
                     <div className="modal-dialog">
 
                         <div className="modal-content">
-                            <div className="modal-header">
+                            <div className="modal-header" style={{color: 'white', background: '#B44A7C'}}>
                                 <button type="button" className="close" data-dismiss="modal">&times;</button>
-                                <h4 className="modal-title">Alert</h4>
+                                <h4 className="modal-title" style={{textAlign: 'center'}}>Attention</h4>
                             </div>
                             <div className="modal-body">
-                                <p>Your session has timed out.</p>
+                                <p>Your session will end soon and you will be Signed Off. Would you like to continue your session?</p>
                             </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                            <div className="modal-footer" style={{textAlign: 'center'}}>
+                                <button type="button" className="btn btn-default" data-dismiss="modal"
+                                        style={{color: 'white', background: '#B44A7C'}}>
+                                    Continue
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="sessionExpiredModal" className="modal fade" role="dialog">
+                    <div className="modal-dialog">
+
+                        <div className="modal-content">
+                            <div className="modal-header" style={{background: '#B44A7C'}}>
+                                <button type="button" className="close" data-dismiss="modal">&times;</button>
+                                <h4 className="modal-title">Attention</h4>
+                            </div>
+                            <div className="modal-body">
+                                <p>Your session is no longer active</p>.
+                                <p>Please <a>sign on</a> again to view your account.</p>
                             </div>
                         </div>
 

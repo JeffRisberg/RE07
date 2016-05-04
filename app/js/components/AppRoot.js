@@ -17,8 +17,8 @@ class AppRoot extends React.Component {
 
                             <div className="navbar-collapse collapse">
                                 <ul className="nav navbar-nav">
-                                    <li><NavLink to="/items">Find Charities</NavLink></li>
-                                    <li><NavLink to="/events">Manage Gift Cards</NavLink></li>
+                                    <li><NavLink to="/login">Login</NavLink></li>
+                                    <li><NavLink to="/donations">Manage Donations</NavLink></li>
                                 </ul>
                             </div>
                         </div>
@@ -28,7 +28,7 @@ class AppRoot extends React.Component {
                     <Header/>
                 </div>
                 <div className="container">
-                    <DonationList/>
+                    {this.props.children}
                 </div>
             </div>
         );
