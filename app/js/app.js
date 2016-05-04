@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import DonationList from './components/DonationList.jsx'
+import AppRoot from './components/AppRoot';
 
 ReactDOM.render(
-    <DonationList>
-    </DonationList>,
+    <AppRoot>
+    </AppRoot>,
     document.getElementById('app-root')
 );

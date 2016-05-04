@@ -59,3 +59,11 @@ app.get('/donate', (req, res) => {
 
   res.send('Donation Emitted');
 });
+
+app.get('/expire', (req, res) => {
+  let date = "05/03/16";
+
+  io.emit('expire event', { date });
+
+  res.send('Expiration Emitted');
+});

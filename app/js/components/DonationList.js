@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Donation from './Donation.jsx';
+import Donation from './Donation';
 
 const socket = io();
 
@@ -22,11 +22,11 @@ class DonationList extends React.Component {
 
         let donations = this.state.donations.map((donation) => {
             if (donation.id === newDonationState.id) {
-                // This is the updated donation.
+                // This is an updated donation
                 isNew = false;
                 return newDonationState;
             } else {
-                // This is an unchanged donation.
+                // This is an unchanged donation
                 return donation;
             }
         });
