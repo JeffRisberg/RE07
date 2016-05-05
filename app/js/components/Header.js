@@ -28,7 +28,7 @@ class Header extends React.Component {
                     <div className="modal-dialog">
 
                         <div className="modal-content">
-                            <div className="modal-header" style={{color: 'white', background: '#B44A7C'}}>
+                            <div className="modal-header" style={{color: 'white', background: '#AE2573'}}>
                                 <button type="button" className="close" data-dismiss="modal">&times;</button>
                                 <h4 className="modal-title" style={{textAlign: 'center'}}>Attention</h4>
                             </div>
@@ -37,7 +37,7 @@ class Header extends React.Component {
                             </div>
                             <div className="modal-footer" style={{textAlign: 'center'}}>
                                 <button type="button" className="btn btn-default" data-dismiss="modal"
-                                        style={{color: 'white', background: '#B44A7C'}}>
+                                        style={{color: 'white', background: '#AE2573'}}>
                                     Continue
                                 </button>
                             </div>
