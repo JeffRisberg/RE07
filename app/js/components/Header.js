@@ -50,7 +50,7 @@ class Header extends React.Component {
                     <div className="modal-dialog">
 
                         <div className="modal-content">
-                            <div className="modal-header" style={{background: '#B44A7C'}}>
+                            <div className="modal-header" style={{background: '#AE2573'}}>
                                 <button type="button" className="close" data-dismiss="modal">&times;</button>
                                 <h4 className="modal-title">Attention</h4>
                             </div>
