@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'development',
   entry: {
     javascript: "./app/js/app.js"
   },
@@ -7,7 +8,7 @@ module.exports = {
     filename: "bundle.js"
   },
   module: {
-    loaders: [
+    rules: [
       {test: /\.js$/, exclude: /node_modules/, loader: "babel" },
       {test: /\.jsx$/, exclude: /node_modules/, loader: "babel" }
     ]
