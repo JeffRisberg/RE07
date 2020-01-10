@@ -33,11 +33,5 @@
     "nedb": "^1.8.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
-  },
-  "keywords": [
-    "React",
-    "Express",
-    "Node",
-    "Socket.io"
-  ]
+  }
 }
