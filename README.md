@@ -8,7 +8,7 @@ Example of using socket.io and modal popups
 
 `webpack`
 
-`node start`
+`npm start`
 
 # Then in one browser window
 
