@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { Outlet } from 'react-router';
 
 import NavLink from './NavLink'
 import Header from './Header'
@@ -28,7 +28,7 @@ class AppRoot extends React.Component {
                     <Header/>
                 </div>
                 <div className="container">
-                    {this.props.children}
+                    <Outlet/>
                 </div>
             </div>
         );

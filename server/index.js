@@ -89,3 +89,8 @@ app.get('/expire', (req, res) => {
 
     res.send('Expiration Emitted');
 });
+
+// Catch-all for client-side routes (e.g. /login, /donations); must stay last.
+app.get(/.*/, (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../app/index.html'));
+});

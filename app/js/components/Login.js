@@ -1,7 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-
-import { Link } from 'react-router'
+import React, { useRef } from 'react'
+import { useNavigate } from 'react-router'
 
 import fetch from 'isomorphic-fetch';
 
@@ -11,26 +9,22 @@ import fetch from 'isomorphic-fetch';
  * @author Jeff Risberg, Brandon Risberg
  * @since March 2016
  */
-class Login extends React.Component {
+function Login(props) {
+    const navigate = useNavigate();
+    const loginRef = useRef(null);
+    const passwordRef = useRef(null);
 
-    constructor() {
-        super();
-
-        this.logout = this.logout.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    logout() {
-        if (this.props.donor != undefined && this.props.donor != null) {
-            this.props.logout(this.props.donor.token);
+    const logout = () => {
+        if (props.donor != undefined && props.donor != null) {
+            props.logout(props.donor.token);
         }
-    }
+    };
 
-    handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
-        const login = ReactDOM.findDOMNode(this.refs.login).value.trim();
-        const password = ReactDOM.findDOMNode(this.refs.password).value.trim();
+        const login = loginRef.current.value.trim();
+        const password = passwordRef.current.value.trim();
 
         // send login request to back end
         return fetch('/login', {
@@ -43,37 +37,32 @@ class Login extends React.Component {
             dataType: 'json',
             body: JSON.stringify({login: login, password: password})
         }).then(() => {
-            this.context.router.push('/');
+            navigate('/');
         })
-    }
+    };
 
-    render() {
-        if (this.props.donor != undefined && this.props.donor != null)
-            return (
-                <div>
-                    <p>
-                        You are logged in as {this.props.donor.firstName} {this.props.donor.lastName}
-                    </p>
-                    <button onClick={this.logout}>Logout</button>
-                </div>
-            );
-        else
-            return (
-                <div style={{width: '500px'}}>
-                    <form onSubmit={this.handleSubmit}>
-                        <h2>Please Login</h2>
-                        Login: <input type="text" ref="login"/>
-                        <br/>
-                        Password: <input type="password" ref="password"/>
-                        <br/>
-                        <input type="submit" value="Submit" />
-                    </form>
-                </div>
-            )
-    }
+    if (props.donor != undefined && props.donor != null)
+        return (
+            <div>
+                <p>
+                    You are logged in as {props.donor.firstName} {props.donor.lastName}
+                </p>
+                <button onClick={logout}>Logout</button>
+            </div>
+        );
+    else
+        return (
+            <div style={{width: '500px'}}>
+                <form onSubmit={handleSubmit}>
+                    <h2>Please Login</h2>
+                    Login: <input type="text" ref={loginRef}/>
+                    <br/>
+                    Password: <input type="password" ref={passwordRef}/>
+                    <br/>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+        )
 }
-Login.contextTypes = {
-    router: React.PropTypes.object.isRequired
-};
 
 export default Login;
